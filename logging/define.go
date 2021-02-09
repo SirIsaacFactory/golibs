@@ -13,6 +13,7 @@
 //                 logger := logging.NewLogger()
 //------------------------------------------------------------------------------
 // Author: Isaac Factory (sir.isaac.factory@icloud.com)
+// Repository: https://github.com/SirIsaacFactory/golibs
 // Date: 2021/02/09
 // Code version: v1.00
 ////////////////////////////////////////////////////////////////////////////////
