@@ -59,7 +59,7 @@ func outputLog(loglevel int,
     log.SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds)
 
     // Set log output destination
-    if _LOGFILEPTR != nil {
+    if logfileptr != nil {
       log.SetOutput(io.MultiWriter(streamout, logfileptr))
     } else {
       log.SetOutput(streamout)

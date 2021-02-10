@@ -29,9 +29,10 @@ type Logger struct {
 func NewLogger() *Logger {
   var logger *Logger = new(Logger)
 
-  logger.loglevel = _DEFAULT_LOGLEVEL
-  logger.streamout = os.Stderr
-  logger.logfile = nil
+  logger.loglevel   = _DEFAULT_LOGLEVEL
+  logger.streamout  = os.Stderr
+  logger.logfile    = nil
+  logger.logfileptr = nil
 
   return logger
 }

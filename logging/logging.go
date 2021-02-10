@@ -8,7 +8,7 @@ import (
 // Define package variables
 ////////////////////////////////////////////////////////////////////////////////
 var _LOGLEVEL   int      = _DEFAULT_LOGLEVEL   // loglevel
-var _STREAMOUT  *os.File = os.Stdout           // os.Stdout, os.Stderr, or nil
+var _STREAMOUT  *os.File = os.Stderr           // os.Stdout, os.Stderr, or nil
 var _LOGFILE    *string  = nil                 // log file path
 var _LOGFILEPTR *os.File = nil                 // log file pointer
 
