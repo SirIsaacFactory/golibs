@@ -2,6 +2,7 @@ package logging
 
 import (
   "os"
+  "errors"
 )
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -57,6 +58,27 @@ func (l *Logger) SetCriticalLevel() {
 }
 func (l *Logger) GetLogLevel() int {
   return l.loglevel
+}
+func (l *Logger) SetLogLevel(loglevel int) (err error) {
+  err = nil
+
+  switch(loglevel) {
+  case DEBUG:
+    l.loglevel = loglevel
+  case INFO:
+    l.loglevel = loglevel
+  case WARNING:
+    l.loglevel = loglevel
+  case ERROR:
+    l.loglevel = loglevel
+  case CRITICAL:
+    l.loglevel = loglevel
+  default:
+    l.loglevel = _DEFAULT_LOGLEVEL
+    err = errors.New("loglevel must be [DEBUG|INFO|WARNING|ERROR|CRITICAL]")
+  }
+
+  return err
 }
 
 ////////////////////////////////////////////////////////////////////////////////

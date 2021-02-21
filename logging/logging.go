@@ -2,6 +2,7 @@ package logging
 
 import (
   "os"
+  "errors"
 )
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -33,6 +34,27 @@ func SetCriticalLevel() {
 func GetLogLevel() int {
   return _LOGLEVEL
 }
+func SetLogLevel(loglevel int) (err error) {
+  err = nil
+
+  switch(loglevel) {
+  case DEBUG:
+    _LOGLEVEL = loglevel
+  case INFO:
+    _LOGLEVEL = loglevel
+  case WARNING:
+    _LOGLEVEL = loglevel
+  case ERROR:
+    _LOGLEVEL = loglevel
+  case CRITICAL:
+    _LOGLEVEL = loglevel
+  default:
+    _LOGLEVEL = _DEFAULT_LOGLEVEL
+    err = errors.New("loglevel must be [DEBUG|INFO|WARNING|ERROR|CRITICAL]")
+  }
+
+  return err
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Set streamout
@@ -52,6 +74,7 @@ func SetStreamout(streamout *os.File) {
 func GetStreamout() *os.File {
   return _STREAMOUT
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // Set log file
