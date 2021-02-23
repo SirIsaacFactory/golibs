@@ -5,8 +5,10 @@ import (
   "github.com/SirIsaacFactory/golibs/logging"
 )
 
-var logger *logging.Logger = logging.NewLogger()
-
+////////////////////////////////////////////////////////////////////////////////
+// InitLogging
+// Initialise logging feature
+////////////////////////////////////////////////////////////////////////////////
 func InitLogging(loglevel int, streamout *os.File) {
   logger.SetLogLevel(loglevel)
   logger.SetStreamout(streamout)
